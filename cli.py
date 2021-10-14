@@ -34,7 +34,6 @@ def validate_passwd(password, hashed):
 def append_user_to_file(data, login, hashed):
     with open('storage/users.json', 'w') as f:
         data.update({login: str(hashed)})
-        print(data)
         f.seek(0)
         json.dump(data, f)
 
